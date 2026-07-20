@@ -355,7 +355,7 @@ No aprendí solamente a pulsar opciones en VMware. Aprendí a justificar decisio
 
 ### Evidencia 1: configuración final de la VM
 
-![Configuración de la máquina virtual](docs/img/03-vm-configuracion.jpeg)
+![Configuración de la máquina virtual](docs/img/03-vm-configuracion1.jpeg)
 
 *Figura 1. Recursos asignados a Server-Almacenamiento para mantener un equilibrio entre Ubuntu Server y Windows 11.*
 
