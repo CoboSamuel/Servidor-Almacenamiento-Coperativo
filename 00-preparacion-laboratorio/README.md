@@ -474,7 +474,6 @@ vmware-*.log
 *.pem
 *.key
 ```
-
 ## Próximo paso
 
 El siguiente subproyecto añadirá a esta misma VM un segundo disco virtual nuevo y vacío. Ese disco permitirá practicar identificación, particionado, formateo y montaje sin alterar el VMDK que contiene Ubuntu.
