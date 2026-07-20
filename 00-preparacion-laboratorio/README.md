@@ -353,22 +353,6 @@ No aprendí solamente a pulsar opciones en VMware. Aprendí a justificar decisio
 
 ## Evidencias para GitHub
 
-Las capturas deben guardarse dentro de `docs/img/`. Cada imagen tiene un propósito concreto y debe demostrar una decisión o una verificación del miniproyecto.
-
-### Estructura de archivos
-
-```text
-docs/
-└── img/
-    ├── 01-vmware-version.png
-    ├── 02-iso-sha256.png
-    ├── 03-vm-configuration.png
-    ├── 04-storage-summary.png
-    ├── 05-login.png
-    ├── 06-hostnamectl.png
-    └── 07-lsblk.png
-```
-
 ### Evidencia 1: configuración final de la VM
 
 ![Configuración de la máquina virtual](docs/img/03-vm-configuracion.jpeg)
