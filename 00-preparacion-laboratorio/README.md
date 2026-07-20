@@ -369,111 +369,30 @@ docs/
     └── 07-lsblk.png
 ```
 
-### Evidencia 1: versión de VMware
+### Evidencia 1: configuración final de la VM
 
-**Nombre del archivo:** `01-vmware-version.png`
+![Configuración de la máquina virtual](docs/img/03-vm-configuration.jpeg)
 
-La captura debe mostrar la ventana **Help → About VMware Workstation** con la edición Workstation Pro y la versión 17.6.4. Esta evidencia demuestra que se identificó el hipervisor antes de crear la máquina virtual.
+*Figura 1. Recursos asignados a Server-Almacenamiento para mantener un equilibrio entre Ubuntu Server y Windows 11.*
 
-![Versión de VMware Workstation Pro](docs/img/01-vmware-version.png)
+### Evidencia 2: resumen del almacenamiento
 
-*Figura 1. Identificación de VMware Workstation Pro 17.6.4 como hipervisor utilizado para construir el laboratorio.*
+![Resumen de almacenamiento de Ubuntu](docs/img/04-storage-summary.jpeg)
 
-### Evidencia 2: verificación de la ISO
+*Figura 2. Disco virtual `/dev/sda` de 30 GB preparado con ext4 para instalar Ubuntu Server sin acceder directamente a discos físicos.*
 
-**Nombre del archivo:** `02-iso-sha256.png`
+### Evidencia 3: identidad del sistema
 
-La captura debe mostrar PowerShell con el algoritmo SHA256 y la huella calculada para `ubuntu-26.04-live-server-amd64.iso`. Se recomienda recortar u ocultar la parte de la ruta que contenga el nombre personal del usuario de Windows.
+![Resultado de hostnamectl](docs/img/06-hostnamectl.jpeg)
 
-![Verificación SHA-256 de la ISO](docs/img/02-iso-sha256.png)
+*Figura 3. Verificación de que la VM utiliza el hostname `server-almacenamiento`, Ubuntu 26.04 LTS, virtualización VMware y arquitectura x86-64.*
 
-*Figura 2. Cálculo de la huella SHA-256 de la ISO para comprobar su integridad antes de utilizarla.*
+### Evidencia 4: estructura del disco
 
-### Evidencia 3: configuración final de la VM
+![Resultado de lsblk](docs/img/07-lsblk.jpeg)
 
-**Nombre del archivo:** `03-vm-configuration.png`
+*Figura 4. Identificación del disco virtual `sda`, sus particiones y el lector virtual `sr0` antes de añadir un segundo VMDK.*
 
-La captura debe mostrar el resumen de VMware con el nombre de la VM, 2 núcleos, 2 GB de RAM, disco de 30 GB y adaptador de red NAT. Si aparece una ruta personal o una carpeta de OneDrive, debe ocultarse o utilizarse una captura posterior que muestre la ubicación local corregida.
-
-![Configuración de la máquina virtual](docs/img/03-vm-configuration.png)
-
-*Figura 3. Recursos asignados a Server-Almacenamiento para mantener un equilibrio entre Ubuntu Server y Windows 11.*
-
-### Evidencia 4: resumen del almacenamiento
-
-**Nombre del archivo:** `04-storage-summary.png`
-
-La captura debe mostrar la pantalla **Storage configuration** del instalador con `/dev/sda`, capacidad de 30 GB, formato ext4 y montaje en `/`. Esta evidencia demuestra que se verificó el disco virtual correcto antes del formateo.
-
-![Resumen de almacenamiento de Ubuntu](docs/img/04-storage-summary.png)
-
-*Figura 4. Disco virtual `/dev/sda` de 30 GB preparado con ext4 para instalar Ubuntu Server sin acceder directamente a discos físicos.*
-
-### Evidencia 5: inicio de sesión
-
-**Nombre del archivo:** `05-login.png`
-
-La captura debe mostrar el prompt después de iniciar sesión, por ejemplo `svalmacenamiento@server-almacenamiento:~$`. No debe mostrar la contraseña, intentos fallidos ni información privada.
-
-![Inicio de sesión en Ubuntu Server](docs/img/05-login.png)
-
-*Figura 5. Inicio de sesión correcto en Ubuntu Server con un usuario normal y acceso a la terminal.*
-
-### Evidencia 6: identidad del sistema
-
-**Nombre del archivo:** `06-hostnamectl.png`
-
-La captura debe mostrar el resultado de `hostnamectl`, especialmente `Static hostname`, `Operating System`, `Virtualization` y `Architecture`.
-
-![Resultado de hostnamectl](docs/img/06-hostnamectl.png)
-
-*Figura 6. Verificación de que la VM utiliza el hostname `server-almacenamiento`, Ubuntu 26.04 LTS, virtualización VMware y arquitectura x86-64.*
-
-### Evidencia 7: estructura del disco
-
-**Nombre del archivo:** `07-lsblk.png`
-
-La captura debe mostrar el resultado de `lsblk` con `sda`, `sda1`, `sda2` y `sr0`. Sirve para demostrar que existe un único disco de sistema de 30 GB y que todavía no se añadió el disco de prácticas.
-
-![Resultado de lsblk](docs/img/07-lsblk.png)
-
-*Figura 7. Identificación del disco virtual `sda`, sus particiones y el lector virtual `sr0` antes de añadir un segundo VMDK.*
-
-### Revisión de seguridad antes de publicar
-
-Antes de subir cada captura se debe comprobar que no muestre:
-
-- Contraseñas o frases utilizadas como contraseña
-- Claves privadas, tokens o códigos de recuperación
-- Nombre completo del usuario de Windows dentro de una ruta
-- Dirección de correo personal
-- Archivos privados visibles en el escritorio
-- Información que no pertenezca al proyecto
-
-Las imágenes sirven como evidencia técnica. No es necesario publicar todas las pantallas del asistente, solo las que demuestran las decisiones y verificaciones principales.
-
-## Archivos que no deben publicarse
-
-No se deben subir a GitHub la ISO ni los archivos de VMware. El repositorio debe documentar la construcción del laboratorio, no contener la máquina virtual completa.
-
-`.gitignore` sugerido:
-
-```gitignore
-*.iso
-*.vmdk
-*.vmx
-*.vmxf
-*.vmsd
-*.vmsn
-*.vmem
-*.nvram
-*.lck/
-vmware.log
-vmware-*.log
-.env
-*.pem
-*.key
-```
 ## Próximo paso
 
 El siguiente subproyecto añadirá a esta misma VM un segundo disco virtual nuevo y vacío. Ese disco permitirá practicar identificación, particionado, formateo y montaje sin alterar el VMDK que contiene Ubuntu.
