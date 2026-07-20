@@ -351,47 +351,6 @@ No aprendí solamente a pulsar opciones en VMware. Aprendí a justificar decisio
 - Confirmar el resultado con herramientas de Linux
 - Apagar un servidor de forma ordenada
 
-## Evidencias para GitHub
-
-Las capturas pueden guardarse en:
-
-```text
-docs/
-└── img/
-    ├── 01-vmware-version.png
-    ├── 02-iso-sha256.png
-    ├── 03-vm-configuration.png
-    ├── 04-storage-summary.png
-    ├── 05-login.png
-    ├── 06-hostnamectl.png
-    └── 07-lsblk.png
-```
-
-Antes de publicar una captura se debe comprobar que no muestre contraseñas, rutas personales, claves, tokens ni otros datos sensibles.
-
-## Archivos que no deben publicarse
-
-No se deben subir a GitHub la ISO ni los archivos de VMware. El repositorio debe documentar la construcción del laboratorio, no contener la máquina virtual completa.
-
-`.gitignore` sugerido:
-
-```gitignore
-*.iso
-*.vmdk
-*.vmx
-*.vmxf
-*.vmsd
-*.vmsn
-*.vmem
-*.nvram
-*.lck/
-vmware.log
-vmware-*.log
-.env
-*.pem
-*.key
-```
-
 ## Próximo paso
 
 El siguiente subproyecto añadirá a esta misma VM un segundo disco virtual nuevo y vacío. Ese disco permitirá practicar identificación, particionado, formateo y montaje sin alterar el VMDK que contiene Ubuntu.
