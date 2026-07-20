@@ -371,7 +371,7 @@ docs/
 
 ### Evidencia 1: configuración final de la VM
 
-![Configuración de la máquina virtual](docs/img/03-vm-configuration.jpeg)
+![Configuración de la máquina virtual](docs/img/03-vm-configuracion.jpeg)
 
 *Figura 1. Recursos asignados a Server-Almacenamiento para mantener un equilibrio entre Ubuntu Server y Windows 11.*
 
